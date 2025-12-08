@@ -34,7 +34,7 @@
 LINK_ENTITY_TO_CLASS( grenade, CGrenade )
 
 // Grenades flagged with this will be triggered when the owner calls detonateSatchelCharges
-#define SF_DETONATE		0x0001
+//#define SF_DETONATE		0x0001
 
 //
 // Grenade Explode
@@ -430,7 +430,7 @@ CGrenade *CGrenade::ShootTimed( entvars_t *pevOwner, Vector vecStart, Vector vec
 	return pGrenade;
 }
 
-CGrenade *CGrenade::ShootSatchelCharge( entvars_t *pevOwner, Vector vecStart, Vector vecVelocity )
+/*CGrenade *CGrenade::ShootSatchelCharge( entvars_t *pevOwner, Vector vecStart, Vector vecVelocity )
 {
 	CGrenade *pGrenade = GetClassPtr( (CGrenade *)NULL );
 	pGrenade->pev->movetype = MOVETYPE_BOUNCE;
@@ -487,6 +487,6 @@ void CGrenade::UseSatchelCharges( entvars_t *pevOwner, SATCHELCODE code )
 		}
 		pentFind = FIND_ENTITY_BY_CLASSNAME( pentFind, "grenade" );
 	}
-}
+}*/
 
 //======================end grenade
