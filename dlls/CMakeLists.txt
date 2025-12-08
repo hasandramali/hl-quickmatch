@@ -90,7 +90,6 @@ set (SVDLL_SOURCES
 	healthkit.cpp
 	hgrunt.cpp
 	hornet.cpp
-	hornetgun.cpp
 	houndeye.cpp
 	ichthyosaur.cpp
 	islave.cpp
@@ -118,7 +117,6 @@ set (SVDLL_SOURCES
 	roach.cpp
 	rpg.cpp
 	awp.cpp
-	satchel.cpp
 	schedule.cpp
 	scientist.cpp
 	scripted.cpp
