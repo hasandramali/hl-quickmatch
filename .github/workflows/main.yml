@@ -1,0 +1,29 @@
+name: Build and Deploy
+on: [ push, pull_request ]
+
+jobs:
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+          cache: gradle
+      - name: Build APK (Debug)
+        run: |
+          ./gradlew assembleDebug
+          mv app/build/outputs/apk/debug/app-debug.apk Quickmatch-Android.apk
+        working-directory: android
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Android
+          path: android/*.apk
