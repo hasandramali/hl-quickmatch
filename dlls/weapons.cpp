@@ -326,10 +326,6 @@ void W_Precache( void )
 	UTIL_PrecacheOtherWeapon( "weapon_357" );
 	UTIL_PrecacheOther( "ammo_357" );
 
-	// gauss
-	UTIL_PrecacheOtherWeapon( "weapon_gauss" );
-	UTIL_PrecacheOther( "ammo_gaussclip" );
-
 	// rpg
 	UTIL_PrecacheOtherWeapon( "weapon_rpg" );
 	UTIL_PrecacheOther( "ammo_rpgclip" );
@@ -337,9 +333,6 @@ void W_Precache( void )
 	// awp sniper rifle
 	UTIL_PrecacheOtherWeapon( "weapon_awp" );
 	UTIL_PrecacheOther( "ammo_awp" );
-
-	// egon
-	UTIL_PrecacheOtherWeapon( "weapon_egon" );
 #endif
 	// tripmine, satchel: disabled weapons, do not precache or register
 	// hand grenade
@@ -1619,43 +1612,3 @@ TYPEDESCRIPTION	CShotgun::m_SaveData[] =
 };
 
 IMPLEMENT_SAVERESTORE( CShotgun, CBasePlayerWeapon )
-
-TYPEDESCRIPTION	CGauss::m_SaveData[] =
-{
-	DEFINE_FIELD( CGauss, m_fInAttack, FIELD_INTEGER ),
-	//DEFINE_FIELD( CGauss, m_flStartCharge, FIELD_TIME ),
-	//DEFINE_FIELD( CGauss, m_flPlayAftershock, FIELD_TIME ),
-	//DEFINE_FIELD( CGauss, m_flNextAmmoBurn, FIELD_TIME ),
-	DEFINE_FIELD( CGauss, m_fPrimaryFire, FIELD_BOOLEAN ),
-};
-
-IMPLEMENT_SAVERESTORE( CGauss, CBasePlayerWeapon )
-
-TYPEDESCRIPTION	CEgon::m_SaveData[] =
-{
-	//DEFINE_FIELD( CEgon, m_pBeam, FIELD_CLASSPTR ),
-	//DEFINE_FIELD( CEgon, m_pNoise, FIELD_CLASSPTR ),
-	//DEFINE_FIELD( CEgon, m_pSprite, FIELD_CLASSPTR ),
-	DEFINE_FIELD( CEgon, m_shootTime, FIELD_TIME ),
-	DEFINE_FIELD( CEgon, m_fireState, FIELD_INTEGER ),
-	DEFINE_FIELD( CEgon, m_fireMode, FIELD_INTEGER ),
-	DEFINE_FIELD( CEgon, m_shakeTime, FIELD_TIME ),
-	DEFINE_FIELD( CEgon, m_flAmmoUseTime, FIELD_TIME ),
-};
-
-IMPLEMENT_SAVERESTORE( CEgon, CBasePlayerWeapon )
-
-TYPEDESCRIPTION CHgun::m_SaveData[] =
-{
-	DEFINE_FIELD( CHgun, m_flRechargeTime, FIELD_TIME ),
-	DEFINE_FIELD( CHgun, m_iFirePhase, FIELD_INTEGER ),
-};
-
-IMPLEMENT_SAVERESTORE( CHgun, CBasePlayerWeapon )
-
-TYPEDESCRIPTION	CSatchel::m_SaveData[] = 
-{
-	DEFINE_FIELD( CSatchel, m_chargeReady, FIELD_INTEGER ),
-};
-
-IMPLEMENT_SAVERESTORE( CSatchel, CBasePlayerWeapon )
