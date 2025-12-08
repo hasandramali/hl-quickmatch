@@ -783,8 +783,8 @@ void CBasePlayer::PackDeadPlayerItems( void )
 			iPW++;
 		}
 	}
-	else*/
-	{
+	else
+	{*/
 		bool bPackItems = true;
 		/*if ( iAmmoRules == GR_PLR_DROP_AMMO_ACTIVE && iWeaponRules == GR_PLR_DROP_GUN_ACTIVE )
 		{
