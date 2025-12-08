@@ -334,7 +334,7 @@ void W_Precache( void )
 	UTIL_PrecacheOtherWeapon( "weapon_awp" );
 	UTIL_PrecacheOther( "ammo_awp" );
 #endif
-	// tripmine, satchel: disabled weapons, do not precache or register
+	// tripmine: disabled weapons, do not precache or register
 	// hand grenade
 	UTIL_PrecacheOtherWeapon("weapon_handgrenade");
 #if !OEM_BUILD && !HLDEMO_BUILD
