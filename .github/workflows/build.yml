@@ -11,9 +11,6 @@ jobs:
           - os: ubuntu-latest
             cc: gcc
             cxx: g++
-          - os: ubuntu-latest
-            cc: clang
-            cxx: clang++
           - os: windows-latest
             cc: cl
             cxx: cl
@@ -44,7 +41,7 @@ jobs:
         cmake --build build-vgui --target all
         cmake --build build-vgui --target install
 
-    - name: Set developer command prompt for Windows x86 (Visual Studio Ortamı)
+    - name: Set developer command prompt for Windows x86
       if: startsWith(matrix.os, 'windows')
       uses: ilammy/msvc-dev-cmd@v1
       with:
@@ -63,7 +60,7 @@ jobs:
         cmake --build build-vgui --target all
         cmake --build build-vgui --target install
 
-    - name: Set developer command prompt for Windows x64 (Visual Studio Ortamı)
+    - name: Set developer command prompt for Windows x64
       if: startsWith(matrix.os, 'windows')
       uses: ilammy/msvc-dev-cmd@v1
       with:
@@ -106,7 +103,7 @@ jobs:
         name: hlsdk-${{ steps.extract_branch.outputs.branch }}-linux-vgui
         path: dist-vgui/${{ steps.extract_gamedir.outputs.gamedir }}
 
-    - name: Upload windows artifact (x86)
+    - name: Upload windows artifact x86
       if: startsWith(matrix.os, 'windows') && matrix.cc == 'cl'
       uses: actions/upload-artifact@v4
       with:
@@ -120,7 +117,7 @@ jobs:
         name: hlsdk-${{ steps.extract_branch.outputs.branch }}-windows_x64
         path: dist64/${{ steps.extract_gamedir.outputs.gamedir }}
 
-    - name: Upload windows artifact with vgui (x86)
+    - name: Upload windows artifact with vgui x86
       if: startsWith(matrix.os, 'windows') && matrix.cc == 'cl'
       uses: actions/upload-artifact@v4
       with:
