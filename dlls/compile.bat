@@ -30,7 +30,6 @@ set SOURCES=agrunt.cpp ^
 	defaultai.cpp ^
 	doors.cpp ^
 	effects.cpp ^
-	egon.cpp ^
 	explode.cpp ^
 	flyingmonster.cpp ^
 	func_break.cpp ^
@@ -38,7 +37,6 @@ set SOURCES=agrunt.cpp ^
 	game.cpp ^
 	gamerules.cpp ^
 	gargantua.cpp ^
-	gauss.cpp ^
 	genericmonster.cpp ^
 	ggrenade.cpp ^
 	globals.cpp ^
@@ -55,7 +53,6 @@ set SOURCES=agrunt.cpp ^
 	healthkit.cpp ^
 	hgrunt.cpp ^
 	hornet.cpp ^
-	hornetgun.cpp ^
 	houndeye.cpp ^
 	ichthyosaur.cpp ^
 	islave.cpp ^
@@ -82,7 +79,6 @@ set SOURCES=agrunt.cpp ^
 	rat.cpp ^
 	roach.cpp ^
 	rpg.cpp ^
-	satchel.cpp ^
 	schedule.cpp ^
 	scientist.cpp ^
 	scripted.cpp ^

@@ -167,10 +167,6 @@ void CHalfLifeMultiplay::RefreshSkillData( void )
 	// RPG
 	gSkillData.plrDmgRPG = 120;
 
-	// Egon
-	gSkillData.plrDmgEgonWide = 20;
-	gSkillData.plrDmgEgonNarrow = 10;
-
 	// Hand Grendade
 	gSkillData.plrDmgHandGrenade = 100;
 
@@ -703,12 +699,6 @@ void CHalfLifeMultiplay::DeathNotice( CBasePlayer *pVictim, entvars_t *pKiller, 
 		WRITE_BYTE( ENTINDEX( pVictim->edict() ) );		// the victim
 		WRITE_STRING( killer_weapon_name );		// what they were killed by (should this be a string?)
 	MESSAGE_END();
-
-	// replace the code names with the 'real' names
-	if( !strcmp( killer_weapon_name, "egon" ) )
-		killer_weapon_name = gluon;
-	else if( !strcmp( killer_weapon_name, "gauss" ) )
-		killer_weapon_name = tau;
 
 	if( pVictim->pev == pKiller )  
 	{
@@ -1698,8 +1688,6 @@ void CMultiplayBusters::PlayerKilled( CBasePlayer *pVictim, entvars_t *pKiller, 
 	{
 		UTIL_ClientPrintAll( HUD_PRINTCENTER, "The Buster is dead!!" );
 
-		m_flEgonBustingCheckTime = -1.0f;
-
 		CBasePlayer *peKiller = NULL;
 		CBaseEntity *ktmp = CBaseEntity::Instance( pKiller );
 		if( ktmp && ( ktmp->Classify() == CLASS_PLAYER ) )
@@ -1741,7 +1729,6 @@ void CMultiplayBusters::PlayerSpawn( CBasePlayer *pPlayer )
 
 bool IsPlayerBusting( CBaseEntity *pPlayer )
 {
-	// Egon weapon has been removed, so no players can be busting
 	return false;
 }
 
@@ -1758,20 +1745,10 @@ BOOL BustingCanHaveItem( CBasePlayer *pPlayer, CBaseEntity *pItem )
 CMultiplayBusters::CMultiplayBusters()
 {
 	CHalfLifeMultiplay();
-
-	m_flEgonBustingCheckTime = -1.0;
-}
-
-void CMultiplayBusters::CheckForEgons( void )
-{
-	// Egon weapon and busting mechanic have been removed.
-	// Keep timer value sane but do no further processing.
-	m_flEgonBustingCheckTime = -1.0f;
 }
 
 void CMultiplayBusters::Think( void )
 {
-	CheckForEgons();
 	CHalfLifeMultiplay::Think();
 }
 
@@ -1793,7 +1770,6 @@ void CMultiplayBusters::SetPlayerModel( CBasePlayer *pPlayer, BOOL bKnownBuster 
 
 void CMultiplayBusters::PlayerGotWeapon( CBasePlayer *pPlayer, CBasePlayerItem *pWeapon )
 {
-	// Egon weapon has been removed, nothing to do here
 	UTIL_ClientPrintAll( HUD_PRINTCENTER, "Long live the new Buster!" );
 	UTIL_ClientPrintAll( HUD_PRINTTALK, UTIL_VarArgs( "%s is busting!\n", STRING( pPlayer->pev->netname )));
 	SetPlayerModel( pPlayer, TRUE );

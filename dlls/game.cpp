@@ -34,9 +34,7 @@ cvar_t timelimit	= { "mp_timelimit","0", FCVAR_SERVER };
 cvar_t friendlyfire	= { "mp_friendlyfire","0", FCVAR_SERVER };
 cvar_t falldamage	= { "mp_falldamage","0", FCVAR_SERVER };
 cvar_t weaponstay	= { "mp_weaponstay","0", FCVAR_SERVER };
-cvar_t selfgauss	= { "selfgauss", "1", FCVAR_SERVER };
 cvar_t chargerfix	= { "chargerfix", "0", FCVAR_SERVER };
-cvar_t satchelfix	= { "satchelfix", "1", FCVAR_SERVER };
 cvar_t explosionfix	= { "explosionfix", "0", FCVAR_SERVER };
 cvar_t monsteryawspeedfix	= { "monsteryawspeedfix", "1", FCVAR_SERVER };
 cvar_t corpsephysics = { "corpsephysics", "0", FCVAR_SERVER };
@@ -341,32 +339,10 @@ cvar_t	sk_plr_rpg2 = {"sk_plr_rpg2","0"};
 cvar_t	sk_plr_rpg3 = {"sk_plr_rpg3","0"};
 
 
-// Zero Point Generator
-cvar_t	sk_plr_gauss1 = {"sk_plr_gauss1","0"};
-cvar_t	sk_plr_gauss2 = {"sk_plr_gauss2","0"};
-cvar_t	sk_plr_gauss3 = {"sk_plr_gauss3","0"};
-
-
-// Tau Cannon
-cvar_t	sk_plr_egon_narrow1 = {"sk_plr_egon_narrow1","0"};
-cvar_t	sk_plr_egon_narrow2 = {"sk_plr_egon_narrow2","0"};
-cvar_t	sk_plr_egon_narrow3 = {"sk_plr_egon_narrow3","0"};
-
-cvar_t	sk_plr_egon_wide1 = {"sk_plr_egon_wide1","0"};
-cvar_t	sk_plr_egon_wide2 = {"sk_plr_egon_wide2","0"};
-cvar_t	sk_plr_egon_wide3 = {"sk_plr_egon_wide3","0"};
-
-
 // Hand Grendade
 cvar_t	sk_plr_hand_grenade1 = {"sk_plr_hand_grenade1","0"};
 cvar_t	sk_plr_hand_grenade2 = {"sk_plr_hand_grenade2","0"};
 cvar_t	sk_plr_hand_grenade3 = {"sk_plr_hand_grenade3","0"};
-
-
-// Satchel Charge
-cvar_t	sk_plr_satchel1	= {"sk_plr_satchel1","0"};
-cvar_t	sk_plr_satchel2	= {"sk_plr_satchel2","0"};
-cvar_t	sk_plr_satchel3	= {"sk_plr_satchel3","0"};
 
 
 // Tripmine
@@ -492,9 +468,7 @@ void GameDLLInit( void )
 	CVAR_REGISTER( &friendlyfire );
 	CVAR_REGISTER( &falldamage );
 	CVAR_REGISTER( &weaponstay );
-	CVAR_REGISTER( &selfgauss );
 	CVAR_REGISTER( &chargerfix );
-	CVAR_REGISTER( &satchelfix );
 	CVAR_REGISTER( &explosionfix );
 	CVAR_REGISTER( &monsteryawspeedfix );
 	CVAR_REGISTER( &corpsephysics );
@@ -778,29 +752,10 @@ void GameDLLInit( void )
 	CVAR_REGISTER( &sk_plr_rpg2 );// {"sk_plr_rpg2","0"};
 	CVAR_REGISTER( &sk_plr_rpg3 );// {"sk_plr_rpg3","0"};
 
-	// Gauss Gun
-	CVAR_REGISTER( &sk_plr_gauss1 );// {"sk_plr_gauss1","0"};
-	CVAR_REGISTER( &sk_plr_gauss2 );// {"sk_plr_gauss2","0"};
-	CVAR_REGISTER( &sk_plr_gauss3 );// {"sk_plr_gauss3","0"};
-
-	// Egon Gun
-	CVAR_REGISTER( &sk_plr_egon_narrow1 );// {"sk_plr_egon_narrow1","0"};
-	CVAR_REGISTER( &sk_plr_egon_narrow2 );// {"sk_plr_egon_narrow2","0"};
-	CVAR_REGISTER( &sk_plr_egon_narrow3 );// {"sk_plr_egon_narrow3","0"};
-
-	CVAR_REGISTER( &sk_plr_egon_wide1 );// {"sk_plr_egon_wide1","0"};
-	CVAR_REGISTER( &sk_plr_egon_wide2 );// {"sk_plr_egon_wide2","0"};
-	CVAR_REGISTER( &sk_plr_egon_wide3 );// {"sk_plr_egon_wide3","0"};
-
 	// Hand Grendade
 	CVAR_REGISTER( &sk_plr_hand_grenade1 );// {"sk_plr_hand_grenade1","0"};
 	CVAR_REGISTER( &sk_plr_hand_grenade2 );// {"sk_plr_hand_grenade2","0"};
 	CVAR_REGISTER( &sk_plr_hand_grenade3 );// {"sk_plr_hand_grenade3","0"};
-
-	// Satchel Charge
-	CVAR_REGISTER( &sk_plr_satchel1 );// {"sk_plr_satchel1","0"};
-	CVAR_REGISTER( &sk_plr_satchel2 );// {"sk_plr_satchel2","0"};
-	CVAR_REGISTER( &sk_plr_satchel3 );// {"sk_plr_satchel3","0"};
 
 	// Tripmine
 	CVAR_REGISTER( &sk_plr_tripmine1 );// {"sk_plr_tripmine1","0"};

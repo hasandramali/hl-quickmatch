@@ -464,7 +464,7 @@ void CBasePlayerItem::FallThink( void )
 		if( !FNullEnt( pev->owner ))
 			return;
 
-		if( FClassnameIs( pev, "weapon_crowbar" ))
+		if( FClassnameIs( pev, "weapon_knife" ))
 			UTIL_Remove( this );
 	}
 }

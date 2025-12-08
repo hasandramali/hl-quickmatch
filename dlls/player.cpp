@@ -767,7 +767,7 @@ void CBasePlayer::PackDeadPlayerItems( void )
 
 	if( g_pGameRules->IsBustingGame())
 	{
-		while( rgpPackWeapons[iPW] )
+		/*while( rgpPackWeapons[iPW] )
 		{
 			// weapon unhooked from the player. Pack it into der box.
 			if( FClassnameIs( rgpPackWeapons[iPW]->pev, "weapon_egon" ))
@@ -783,17 +783,17 @@ void CBasePlayer::PackDeadPlayerItems( void )
 			iPW++;
 		}
 	}
-	else
+	else*/
 	{
 		bool bPackItems = true;
-		if ( iAmmoRules == GR_PLR_DROP_AMMO_ACTIVE && iWeaponRules == GR_PLR_DROP_GUN_ACTIVE )
+		/*if ( iAmmoRules == GR_PLR_DROP_AMMO_ACTIVE && iWeaponRules == GR_PLR_DROP_GUN_ACTIVE )
 		{
 			if ( rgpPackWeapons[0] == NULL
 				|| ( FClassnameIs( rgpPackWeapons[0]->pev, "weapon_satchel" ) && ( iPackAmmo[0] == -1 || ( m_rgAmmo[iPackAmmo[0]] == 0 ) ) ) )
 			{
 				bPackItems = false;
 			}
-		}
+		}*/
 
 		if ( bPackItems )
 		{
@@ -865,9 +865,6 @@ void CBasePlayer::RemoveAllItems( BOOL removeSuit )
 
 	for( i = 0; i < MAX_AMMO_SLOTS; i++ )
 		m_rgAmmo[i] = 0;
-
-	if( satchelfix.value )
-		DeactivateSatchels( this );
 
 	UpdateClientData();
 
@@ -3631,14 +3628,10 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveNamedItem( "ammo_357" );
 		GiveNamedItem( "weapon_crossbow" );
 		GiveNamedItem( "ammo_crossbow" );
-		GiveNamedItem( "weapon_egon" );
-		GiveNamedItem( "weapon_gauss" );
-		GiveNamedItem( "ammo_gaussclip" );
 		GiveNamedItem( "weapon_rpg" );
 		GiveNamedItem( "ammo_rpgclip" );
-		GiveNamedItem( "weapon_satchel" );
 		GiveNamedItem( "weapon_snark" );
-		GiveNamedItem( "weapon_hornetgun" );
+		GiveNamedItem( "weapon_awp" );
 #endif
 		gEvilImpulse101 = FALSE;
 		break;

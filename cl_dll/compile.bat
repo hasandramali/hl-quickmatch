@@ -10,14 +10,10 @@ set XASH3DSRC=..\..\Xash3D_original
 set INCLUDES=-I../common -I../engine -I../pm_shared -I../game_shared -I../public -I../external -I../dlls -I../utils/fake_vgui/include
 set SOURCES=../dlls/crossbow.cpp ^
 	../dlls/knife.cpp ^
-	../dlls/egon.cpp ^
-	../dlls/gauss.cpp ^
 	../dlls/handgrenade.cpp ^
-	../dlls/hornetgun.cpp ^
 	../dlls/mp5.cpp ^
 	../dlls/python.cpp ^
 	../dlls/rpg.cpp ^
-	../dlls/satchel.cpp ^
 	../dlls/shotgun.cpp ^
 	../dlls/squeakgrenade.cpp ^
 	../dlls/tripmine.cpp ^

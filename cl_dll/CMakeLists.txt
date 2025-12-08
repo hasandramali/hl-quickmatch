@@ -66,11 +66,9 @@ set (CLDLL_SOURCES
 	../dlls/crossbow.cpp
 	../dlls/knife.cpp
 	../dlls/handgrenade.cpp
-	../dlls/hornetgun.cpp
 	../dlls/mp5.cpp
 	../dlls/python.cpp
 	../dlls/rpg.cpp
-	../dlls/satchel.cpp
 	../dlls/shotgun.cpp
 	../dlls/squeakgrenade.cpp
 	../dlls/awp.cpp
